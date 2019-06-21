@@ -1,59 +1,83 @@
 .carousel {
-  .width-100();
-  .flex(center, center);
-  height: 500px;
-  position: relative;
-  overflow: hidden;
-  margin-top: 16px;
+	.width-100();
+	.flex(center, center);
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+	margin-top: 16px;
 
-  @media(min-width: 1200px) {
-    width: 1200px;
-  }
+	@media (min-width: 1200px) {
+		width: 1200px;
+	}
 
-  .left-button,
-  .right-button {
-    .flex(center);
-    color: @lambda-times-color-white;
-    background-color: @lambda-times-color-primary;
-    // background: red;
-    font-size: 40px;
-    border-radius: 50%;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+	.left-button,
+	.right-button {
+		.flex(center);
+		color: @lambda-times-color-white;
+		background-color: @lambda-times-color-primary;
+		// background: red;
+		font-size: 40px;
+		border-radius: 50%;
+		position: absolute;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
 
-    &:hover {
-      color: @lambda-times-color-primary;
-      background-color: @lambda-times-color-white;
-      border: 2px solid @lambda-times-color-primary;
-    }
-  }
+		&:hover {
+			color: @lambda-times-color-primary;
+			background-color: @lambda-times-color-white;
+			border: 2px solid @lambda-times-color-primary;
+		}
+	}
 
-  .left-button {
-    top: 50%;
-    left: 25px;
-    transform: translate(0, -50%);
-    z-index: 2;
-  }
+	.left-button {
+		top: 50%;
+		left: 25px;
+		transform: translate(0, -50%);
+		z-index: 2;
+	}
 
-  .right-button {
-    top: 50%;
-    right: 25px;
-    transform: translate(0, -50%);
-    z-index: 2;
-  }
+	.right-button {
+		top: 50%;
+		right: 25px;
+		transform: translate(0, -50%);
+		z-index: 2;
+	}
 
-  .carousel-img {
-    // .width-100();
-    width: 0%;
-    display: none;
-    // transform: translate(100%, 0);
-    // transition: transform 2s linear;
-  }
+	.carousel-img {
+		// .width-100();
+		width: 0%;
+		display: none;
+		// transform: translate(100%, 0);
+		// transition: transform 2s linear;
+		&.previous-img {
+			display: block;
+			order: 0;
+			z-index: 0;
+			width: 0%;
+			transform: translate(-100%, 0);
+			transition: all 2s linear;
+		}
+		&.currant-img {
+			display: block;
+			order: 1;
+			z-index: 1;
+			width: 100%;
+			transform: translate(0%, 0);
+			transition: all 2s linear;
+		}
+		&.next-img {
+			display: block;
+			order: 2;
+			z-index: 1;
+			width: 0%;
+			transform: translate(50%, 0);
+			transition: all 2s linear;
+		}
+	}
 
-  .active-img {
-    display: block;
-    width: 100%;
-  }
+	// .active-img {
+	// 	display: block;
+	// 	width: 100%;
+	// }
 }

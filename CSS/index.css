@@ -281,7 +281,27 @@ body {
   width: 0%;
   display: none;
 }
-.carousel .active-img {
+.carousel .carousel-img.previous-img {
   display: block;
+  order: 0;
+  z-index: 0;
+  width: 0%;
+  transform: translate(-100%, 0);
+  transition: all 2s linear;
+}
+.carousel .carousel-img.currant-img {
+  display: block;
+  order: 1;
+  z-index: 1;
   width: 100%;
+  transform: translate(0%, 0);
+  transition: all 2s linear;
+}
+.carousel .carousel-img.next-img {
+  display: block;
+  order: 2;
+  z-index: 1;
+  width: 0%;
+  transform: translate(50%, 0);
+  transition: all 2s linear;
 }
