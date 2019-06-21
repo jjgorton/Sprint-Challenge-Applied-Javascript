@@ -12,43 +12,21 @@ class Carousel {
 		this.leftBtn.addEventListener('click', () => this.changeImgL());
 	}
 
+	reset() {
+		this.imgs.forEach((pic) => {
+			pic.classList.remove('previous-img', 'currant-img', 'next-img');
+		});
+	}
+
 	loadFirstImg() {
 		let previousImg = this.imgs[this.counterPre];
 		let currantImg = this.imgs[this.counterCurr];
 		let nextImg = this.imgs[this.counterNex];
 
-		this.imgs.forEach((pic) => {
-			pic.style.display = 'none';
-			pic.style.width = '00%';
-			pic.style.transform = 'translate(-100%, 0)';
-			pic.style.order = '0';
-			pic.style.zIndex = '0';
-			// pic.style.transition = 'all 2s linear';
-		});
-
-		previousImg.style.display = 'block';
-		previousImg.style.order = '0';
-		previousImg.style.zIndex = '0';
-		previousImg.style.width = '0%';
-
-		previousImg.style.transform = 'translate(-100%, 0)';
-		previousImg.style.transition = 'all 2s linear';
-
-		currantImg.style.display = 'block';
-		currantImg.style.order = '1';
-		currantImg.style.zIndex = '1';
-		currantImg.style.width = '100%';
-
-		currantImg.style.transform = 'translate(0%, 0)';
-		currantImg.style.transition = 'all 2s linear';
-
-		nextImg.style.display = 'block';
-		nextImg.style.order = '2';
-		nextImg.style.zIndex = '1';
-		nextImg.style.width = '0%';
-
-		nextImg.style.transform = 'translate(50%, 0)';
-		nextImg.style.transition = 'all 2s linear';
+		this.reset();
+		previousImg.classList.add('previous-img');
+		currantImg.classList.add('currant-img');
+		nextImg.classList.add('next-img');
 	}
 
 	changeImgR() {
@@ -80,38 +58,11 @@ class Carousel {
 		//     previousImg.style.display = "none";
 		// }, 2000);
 
-		this.imgs.forEach((pic) => {
-			pic.style.display = 'none';
-			pic.style.width = '00%';
-			pic.style.transform = 'translate(-100%, 0)';
-			pic.style.order = '0';
-			pic.style.zIndex = '0';
-			// pic.style.transition = 'all 2s linear';
-		});
+		this.reset();
 
-		previousImg.style.display = 'block';
-		previousImg.style.order = '0';
-		previousImg.style.zIndex = '0';
-		previousImg.style.width = '30%';
-		previousImg.style.transform = 'rotateY(90deg)';
-		// previousImg.style.transform = 'translate(-100%, 0)';
-		previousImg.style.transition = 'all 2s linear';
-
-		currantImg.style.display = 'block';
-		currantImg.style.order = '1';
-		currantImg.style.zIndex = '1';
-		currantImg.style.width = '100%';
-		currantImg.style.transform = 'rotateY(0deg)';
-		// currantImg.style.transform = 'translate(0%, 0)';
-		currantImg.style.transition = 'all 2s linear';
-
-		nextImg.style.display = 'block';
-		nextImg.style.order = '2';
-		nextImg.style.zIndex = '1';
-		nextImg.style.width = '30%';
-		nextImg.style.transform = 'rotateY(-90deg)';
-		// nextImg.style.transform = 'translate(50%, 0)';
-		nextImg.style.transition = 'all 2s linear';
+		previousImg.classList.add('previous-img');
+		currantImg.classList.add('currant-img');
+		nextImg.classList.add('next-img');
 	}
 
 	changeImgL() {
@@ -153,35 +104,11 @@ class Carousel {
 		//     previousImg.style.display = "none";
 		// }, 2000);
 
-		this.imgs.forEach((pic) => {
-			pic.style.display = 'none';
-			pic.style.width = '00%';
-			pic.style.transform = 'translate(-100%, 0)';
-			pic.style.order = '0';
-			pic.style.zIndex = '0';
-			// pic.style.transition = 'all 2s linear';
-		});
+		this.reset();
 
-		previousImg.style.display = 'block';
-		previousImg.style.order = '0';
-		previousImg.style.zIndex = '1';
-		previousImg.style.width = '0%';
-		previousImg.style.transform = 'translate(-100%, 0)';
-		previousImg.style.transition = 'all 2s linear';
-
-		currantImg.style.display = 'block';
-		currantImg.style.order = '1';
-		currantImg.style.zIndex = '1';
-		currantImg.style.width = '100%';
-		currantImg.style.transform = 'translate(0%, 0)';
-		currantImg.style.transition = 'all 2s linear';
-
-		nextImg.style.display = 'block';
-		nextImg.style.order = '2';
-		nextImg.style.zIndex = '1';
-		nextImg.style.width = '0%';
-		nextImg.style.transform = 'translate(100%, 0)';
-		nextImg.style.transition = 'all 2s linear';
+		previousImg.classList.add('previous-img');
+		currantImg.classList.add('currant-img');
+		nextImg.classList.add('next-img');
 	}
 }
 
