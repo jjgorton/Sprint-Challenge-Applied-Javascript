@@ -5,37 +5,55 @@
   position: relative;
   overflow: hidden;
   margin-top: 16px;
-  @media(min-width: 1200px){
+
+  @media(min-width: 1200px) {
     width: 1200px;
   }
-  .left-button, .right-button {
+
+  .left-button,
+  .right-button {
     .flex(center);
     color: @lambda-times-color-white;
     background-color: @lambda-times-color-primary;
+    // background: red;
     font-size: 40px;
     border-radius: 50%;
     position: absolute;
     width: 50px;
     height: 50px;
     cursor: pointer;
+
     &:hover {
       color: @lambda-times-color-primary;
       background-color: @lambda-times-color-white;
       border: 2px solid @lambda-times-color-primary;
     }
   }
+
   .left-button {
-    top: 50%; 
+    top: 50%;
     left: 25px;
     transform: translate(0, -50%);
+    z-index: 2;
   }
+
   .right-button {
-    top: 50%; 
+    top: 50%;
     right: 25px;
     transform: translate(0, -50%);
+    z-index: 2;
   }
-  img {
-    .width-100();
+
+  .carousel-img {
+    // .width-100();
+    width: 0%;
     display: none;
+    // transform: translate(100%, 0);
+    // transition: transform 2s linear;
+  }
+
+  .active-img {
+    display: block;
+    width: 100%;
   }
 }
